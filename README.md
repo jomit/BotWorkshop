@@ -15,9 +15,9 @@
 
 ### Excercises/Labs
 
-- [1 - Setup Azure Bot Service](https://raw.githubusercontent.com/jomit/BotWorkshop/master/1-SetupAzureBotService.md)
+- [1 - Setup Azure Bot Service](https://github.com/jomit/BotWorkshop/blob/master/1-SetupAzureBotService.md)
 
-- [2 - Update LUIS Model](https://raw.githubusercontent.com/jomit/BotWorkshop/master/2-UpdateLUISModel.md)
+- [2 - Update LUIS Model](https://github.com/jomit/BotWorkshop/blob/master/2-UpdateLUISModel.md)
 
 - [3 - Integrate LUIS Model with Bot]()
 
