@@ -23,13 +23,13 @@
 
 - [4 - Integrate with External Systems]()
 
-- [5 - Deploy Bot App to Azure]()
-
-- [6 - Add Bot Channels]()
+- [5 - Add Bot Channels]()
 
 
 ### Additional Resources
 - [Principles of Bot Design](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-principles?view=azure-bot-service-4.0)
+
+- [Understanding How bots work](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0&tabs=cs)
 
 - [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
 
