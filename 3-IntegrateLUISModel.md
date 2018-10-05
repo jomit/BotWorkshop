@@ -45,7 +45,11 @@
 
 ### Deploy to Azure   
 
+- Use Source Control options in VSCode to Commit & Push the updated code.
 
+- In Azure Portl under App Service, click on `Deployment Options`, you should see a new build.
+
+- Once the build status is `Active`, go back to Web App bot and test it using `Test in Web App`
 
 
 ### Additional Resources

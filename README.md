@@ -19,11 +19,11 @@
 
 - [2 - Update LUIS Model](https://github.com/jomit/BotWorkshop/blob/master/2-UpdateLUISModel.md)
 
-- [3 - Integrate LUIS Model with Bot]()
+- [3 - Integrate LUIS Model with Bot](https://github.com/jomit/BotWorkshop/blob/master/3-IntegrateLUISModel.md)
 
-- [4 - Integrate with External Systems]()
+- [4 - Integrate with External Systems](https://github.com/jomit/BotWorkshop/blob/master/4-IntegratewithExternalSystems.md)
 
-- [5 - Add Bot Channels]()
+- [5 - Add Bot Channels](https://github.com/jomit/BotWorkshop/blob/master/5-AddBotChannels.md)
 
 
 ### Additional Resources

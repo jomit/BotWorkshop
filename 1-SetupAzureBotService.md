@@ -40,13 +40,13 @@
 - Open command prompt on your local machine and run the following command in the directory where you want to download the source code: (Use the password provided for deployment credentials)
     - `git clone <Git clone url>`
 
-- Open the source code folder in Visual Studio Code
+- Open the source code folder in Visual Studio Code.
 
 - Update the Greeting Intent activity text in `bot.js`
 
 - Use Source Control options in VSCode to Commit & Push the updated code.
 
-- Under App Service click again on `Deployment Options`, you should see the status of a new build kickoff
+- In Azure Portal under App Service, click again on `Deployment Options`, you should see a new build.
 
 - Once the build status is `Active`, go back to Web App bot and test it using `Test in Web App`
 
