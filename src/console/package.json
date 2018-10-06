@@ -1,0 +1,16 @@
+{
+  "name": "processor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "azure-sb": "^0.10.6",
+    "dotenv": "^6.0.0"
+  }
+}

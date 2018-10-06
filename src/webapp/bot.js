@@ -69,7 +69,7 @@ class BasicBot {
             // Determine what we should do based on the top intent from LUIS.
             switch (topIntent) {
             case GREETING_INTENT:
-                await context.sendActivity(`Hi, this is Jomit Bot. How can I help you ?`);
+                await context.sendActivity(`Hello`);
             break;
             case HELP_INTENT:
                 await context.sendActivity(`Let me try to provide some help.`);
