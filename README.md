@@ -1,10 +1,6 @@
 # Azure Bot Service - Industry Hackfest
 
-    TODO end-to-end flow diagram
-
-### Business Case Description
-
-    TODO Helpdesk / Finance use case ...
+![Architecture](https://raw.githubusercontent.com/jomit/BotWorkshop/master/images/0-1.png)
 
 ### Prerequisites
 
