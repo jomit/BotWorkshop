@@ -39,10 +39,38 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
 - Update the `index.js` file to use the new FinanceBot class instead of the BasicBot:
 
-    ![Include FinanceBot Class](https://raw.githubusercontent.com/jomit/BotWorkshop/master/images/4-1.png)
 
-    ![Instantiate FinanceBot Class](https://raw.githubusercontent.com/jomit/BotWorkshop/master/images/4-2.png)
+    - Include the file 
 
+    ```nodejs
+    // This bot's main dialog.
+    //const { BasicBot } = require('./bot');
+
+    // Read botFilePath and botFileSecret from .env file
+    // Note: Ensure you have a .env file and include botFilePath and botFileSecret.
+    
+    const ENV_FILE = path.join(__dirname, '.env');
+    const env = require('dotenv').config({ path: ENV_FILE });
+
+    const { FinanceBot } = require('./financebot');
+    ```
+
+    - Instantiate the class
+    
+    ```nodejs
+
+    // Create the main dialog.
+    let bot;
+    try {
+        //bot = new BasicBot(botConfig);
+        bot = new FinanceBot(botConfig, adapter);
+    } catch (err) {
+        console.error(`[botInitializationError]: ${ err }`);
+        process.exit();
+    }
+
+    ```
+    
 ### 4. Test the integration  
 
 - 
