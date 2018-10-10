@@ -94,6 +94,8 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
 - Test the integration with Azure
 
+    - Open terminal under `botrequestprocessor` folder and run `npm start`
+
     - In the Azure Portal under Bot, click on `Application Settings` and add the 2 environment variables:
 
         - `ServiceBusConnectionString=<Primary Connection String>`
