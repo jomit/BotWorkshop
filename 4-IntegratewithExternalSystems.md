@@ -90,6 +90,8 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
     - Type `what is the status for po number 12345`, make sure the status returned matches the expected value.
 
+    ![Bot Emulator](https://raw.githubusercontent.com/jomit/BotWorkshop/master/images/4-1.png)
+
 - Test the integration with Azure
 
     - In the Azure Portal under Bot, click on `Application Settings` and add the 2 environment variables:
@@ -109,3 +111,4 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
     - Once the build status is `Active`, go back to Web App bot and test it using `Test in Web App`
 
+    ![Azure Bot Service](https://raw.githubusercontent.com/jomit/BotWorkshop/master/images/4-2.png)
