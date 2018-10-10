@@ -5,7 +5,7 @@
 
 There are multiple ways to [connect an on-premises network to Azure](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/). For this excercise we will use a more simpler route to connect via [message patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/category/messaging) using [Azure Service Bus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview).
 
-To enable two way communication with Service Bus, we will need a listener app running on premises which can securely access our on premises system and then communicate back with our Azure Bot Service. Here are steps to integrate the two way communication:
+To enable two way communication with Service Bus, we will need a listener app running on premises which can securely access our on premises system and then communicate back with our Azure Bot Service. The Bot request will be handled by a single queue but for response we will create a new queue per user. Here are steps to integrate the two way communication:
 
     1. Create Service Bus Queue
     2. Create on premises Bot Request Processor App
@@ -23,6 +23,8 @@ To enable two way communication with Service Bus, we will need a listener app ru
 ### 2. Create the on premises Bot Request Processor App
 
 - Copy the `src\botrequestprocessor` folder to your on premises server. (To run this app you need to install [Nodejs](https://nodejs.org/en/) 8.12 or greater)
+
+- (OPTIONAL) Update the implementation code under `src\botrequestprocessor\invoicequest.js`
 
 - Create an environment file `.env` under the folder with 2 values:
 
@@ -71,13 +73,39 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
     ```
 
+- Add 2 environemnt variables in the `.env` file
+
+    - `ServiceBusConnectionString=<Primary Connection String>`
+    - `ServiceBusQueueName=requests`
+
 ### 4. Test the integration  
 
-- 
+- Test the integration locally using Emulator
 
+    - Open terminal under `botrequestprocessor` folder and run `npm start`
 
-- add app settings
-- update and commit files (financebot.js, messagebus.js, index.js)
-- run npm install
+    - Open another terminal under bot web app folder and run `npm start`
 
+    - Open Bot Emulator and select the `.bot` file (as shown in Section 3)
+
+    - Type `what is the status for po number 12345`, make sure the status returned matches the expected value.
+
+- Test the integration with Azure
+
+    - In the Azure Portal under Bot, click on `Application Settings` and add the 2 environment variables:
+
+        - `ServiceBusConnectionString=<Primary Connection String>`
+        - `ServiceBusQueueName=requests`
+
+    - Click on Build and Open online code editor.
+
+    - Click on `Open Console` button from the left navigation and run the following command to install the service bus package:
+
+        - `npm install --save azure-sb`
+
+    - Use Source Control options in VSCode to Commit & Push the updated code.
+
+    - In Azure Portl under App Service, click on `Deployment Options`, you should see a new build.
+
+    - Once the build status is `Active`, go back to Web App bot and test it using `Test in Web App`
 

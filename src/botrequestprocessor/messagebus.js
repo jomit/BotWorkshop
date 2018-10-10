@@ -4,6 +4,8 @@
     var async = require('async');
     var jobInterval = 100; //ms
 
+    var invoiceRequest = require('./invoicerequest');
+
     messagebus.startprocessing = function () {
         var connStr = process.env.ServiceBusConnectionString;
         var requestsQueue = process.env.ServiceBusQueueName;
@@ -37,9 +39,9 @@
         } else {
             var requestMessage = JSON.parse(queueMessage.body);
             if (requestMessage.messageType == "POStatus") {
-                var resultMsg = requestMessage;
-                resultMsg.status = "InReview";
-                messagebus.sendResult(serviceBus, resultMsg, requestMessage.replyTo, queueMessage);
+                invoiceRequest.getPOStatus(requestMessage, function(resultMsg){
+                    messagebus.sendResult(serviceBus, resultMsg, requestMessage.replyTo, queueMessage);
+                })
             }
             else {
                 console.log("Invalid message type !");
