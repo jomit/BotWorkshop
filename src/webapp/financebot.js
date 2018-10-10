@@ -105,10 +105,11 @@ class FinanceBot {
     }
 
     async getDefaultMessage(context) {
+        var userId = context.activity.from.id.replace(/:/g,'_');
         return {
-            userId: context.activity.from.id,
+            userId: userId,
             epoch: Date.now(),
-            replyTo: context.activity.from.id,  //to create reply queue for each user
+            replyTo: userId,  //to create reply queue for each user
             channel: 'web'
         }
     }
