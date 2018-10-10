@@ -42,7 +42,7 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
     - Include the file 
 
-    ```nodejs
+    ```javascript
     // This bot's main dialog.
     //const { BasicBot } = require('./bot');
 
@@ -57,7 +57,7 @@ To enable two way communication with Service Bus, we will need a listener app ru
 
     - Instantiate the class
     
-    ```nodejs
+    ```javascript
 
     // Create the main dialog.
     let bot;
@@ -70,7 +70,7 @@ To enable two way communication with Service Bus, we will need a listener app ru
     }
 
     ```
-    
+
 ### 4. Test the integration  
 
 - 
