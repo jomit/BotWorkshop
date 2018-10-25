@@ -30,3 +30,9 @@
 - [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
 
 - [Bot Builder Tools](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tools?view=azure-bot-service-4.0)
+
+- [Adding Media to Bot Messages](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-add-media-attachments?view=azure-bot-service-4.0&tabs=javascript)
+
+- [Adaptive Cards Documentation](https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots)
+
+- [Adaptive Card Schema Explorer](https://adaptivecards.io/explorer/)

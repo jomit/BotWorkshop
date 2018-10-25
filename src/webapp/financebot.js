@@ -96,6 +96,22 @@ class FinanceBot {
                 MessageBus.sendMessage(message, async function (result) {
                     await adapter.continueConversation(reference, async (proactiveTurnContext) => {
                         await proactiveTurnContext.sendActivity(`Status for PO Number ${poNumber} is ${result.status}.`);
+
+                        // Sample response using adaptive cards
+                        
+                        /* const responseCard = CardFactory.adaptiveCard({                           
+                            type : "AdaptiveCard",
+                            version: "1.0",
+                            body: [
+                                {
+                                    type: "TextBlock",
+                                    weight : "bolder",
+                                    text: `Status for PO Number ${poNumber} is ${result.status}.`
+                                }
+                            ]
+                        });
+                        await proactiveTurnContext.sendActivity({ attachments: [responseCard] });
+                        */
                     });
                 });
             } else {
