@@ -23,16 +23,23 @@
 
 
 ### Additional Resources
-- [Principles of Bot Design](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-principles?view=azure-bot-service-4.0)
 
-- [Understanding How bots work](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0&tabs=cs)
+- Documentation
 
-- [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
+    - [Principles of Bot Design](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-principles?view=azure-bot-service-4.0)
+    - [Understanding How bots work](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0&tabs=cs)
 
-- [Bot Builder Tools](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tools?view=azure-bot-service-4.0)
+- Samples & Tools
 
-- [Adding Media to Bot Messages](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-add-media-attachments?view=azure-bot-service-4.0&tabs=javascript)
+    - [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/readme.md)
+    - [Bot Builder Tools](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tools?view=azure-bot-service-4.0)
 
-- [Adaptive Cards Documentation](https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots)
+- Adaptive Cards
 
-- [Adaptive Card Schema Explorer](https://adaptivecards.io/explorer/)
+    - [Adding Media to Bot Messages](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-add-media-attachments?view=azure-bot-service-4.0&tabs=javascript)
+    - [Adaptive Cards Documentation](https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots)
+    - [Adaptive Card Schema Explorer](https://adaptivecards.io/explorer/)
+
+- Videos
+
+    - [Ignite 2018 - Creating enterprise-scale intelligent agents and bots](https://www.youtube.com/watch?v=vpvnqza_OuY)
