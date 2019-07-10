@@ -43,6 +43,11 @@
                     messagebus.sendResult(serviceBus, resultMsg, requestMessage.replyTo, queueMessage);
                 })
             }
+            else if (requestMessage.messageType == "InvoiceStatus") {
+                invoiceRequest.getInvoiceStatus(requestMessage, function(resultMsg){
+                    messagebus.sendResult(serviceBus, resultMsg, requestMessage.replyTo, queueMessage);
+                })
+            }
             else {
                 console.log("Invalid message type !");
                 return;
