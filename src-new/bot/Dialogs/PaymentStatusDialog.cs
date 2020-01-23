@@ -3,10 +3,13 @@
 
 using System.Threading;
 using System.Threading.Tasks;
+using CoreBot.ServiceBus;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
+using Newtonsoft.Json;
 
 namespace Microsoft.BotBuilderSamples.Dialogs
 {
@@ -14,10 +17,11 @@ namespace Microsoft.BotBuilderSamples.Dialogs
     {
         private const string DestinationStepMsgText = "Where would you like to travel to?";
         private const string OriginStepMsgText = "Where are you traveling from?";
-
-        public PaymentStatusDialog()
+        IConfiguration currentConfiguration;
+        public PaymentStatusDialog(IConfiguration configuration)
             : base(nameof(PaymentStatusDialog))
         {
+            currentConfiguration = configuration;
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(new ConfirmPrompt(nameof(ConfirmPrompt)));
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
@@ -36,10 +40,28 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             var messageText = $"Finding payment status for invoice number : {apDetails.InvoiceNumber} and vendor: {apDetails.VendorName}...";
             var message = MessageFactory.Text(messageText, messageText, InputHints.IgnoringInput);
             await stepContext.Context.SendActivityAsync(message, cancellationToken);
-            Thread.Sleep(5000);
-            var result = $"Status for invoice number : {apDetails.InvoiceNumber} and vendor: {apDetails.VendorName} is PAID";
-            apDetails.Result = result;
-            return await stepContext.NextAsync(result, cancellationToken);
+            var userQueueName = "response"; // stepContext.Context.Activity.Recipient.Id;
+
+            dynamic messageDetails = new
+            {
+                Type = "InvoicePayment",
+                UserQueueName = userQueueName,
+                InvoiceNumber = apDetails.InvoiceNumber,
+                Vendor = apDetails.VendorName
+            };
+            
+            var status = await GetPaymentStatusMessageAsync(JsonConvert.SerializeObject(messageDetails), userQueueName);
+            apDetails.Result = status;
+            return await stepContext.NextAsync(status, cancellationToken);
+        }
+
+        private async Task<string> GetPaymentStatusMessageAsync(string messageBody, string userQueueName)
+        {
+            var botRequestor = new BotMessageRequestor(currentConfiguration, userQueueName);
+            await botRequestor.SendMessageAsync(messageBody);
+
+            var response = await botRequestor.ReceiveMessageAsync();
+            return response;
         }
 
         private async Task<DialogTurnResult> AwaitingResultsStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)

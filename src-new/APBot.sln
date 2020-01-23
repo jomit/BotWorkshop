@@ -4,6 +4,8 @@ VisualStudioVersion = 16.0.29319.158
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreBot", "bot\CoreBot.csproj", "{5DFA440C-B72E-4E0E-B7C1-7963B95F19D1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotRequestProcessor", "bot-request-processor\BotRequestProcessor.csproj", "{CCB7692F-65E6-4938-B164-BFC9EDBD189A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{5DFA440C-B72E-4E0E-B7C1-7963B95F19D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DFA440C-B72E-4E0E-B7C1-7963B95F19D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DFA440C-B72E-4E0E-B7C1-7963B95F19D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
