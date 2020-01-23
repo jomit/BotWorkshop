@@ -15,8 +15,6 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 {
     public class PaymentStatusDialog : CancelAndHelpDialog
     {
-        private const string DestinationStepMsgText = "Where would you like to travel to?";
-        private const string OriginStepMsgText = "Where are you traveling from?";
         IConfiguration currentConfiguration;
         public PaymentStatusDialog(IConfiguration configuration)
             : base(nameof(PaymentStatusDialog))
