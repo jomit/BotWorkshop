@@ -59,7 +59,7 @@ namespace BotRequestProcessor
         {
             var statusMessage = new Message(Encoding.UTF8.GetBytes(status));
             var sendUserQueueClient = new QueueClient(serviceBusConnectionString, userQueueName);
-            Console.WriteLine($"Sending message: {statusMessage}");
+            Console.WriteLine($"Sending message: {status}");
             await sendUserQueueClient.SendAsync(statusMessage);
             await sendUserQueueClient.CloseAsync();
         }

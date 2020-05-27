@@ -6,6 +6,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreBot", "bot\CoreBot.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotRequestProcessor", "bot-request-processor\BotRequestProcessor.csproj", "{CCB7692F-65E6-4938-B164-BFC9EDBD189A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProactiveBot", "ProactiveBot\ProactiveBot.csproj", "{04949971-FC3D-4D70-8DD2-8BB549B853BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB7692F-65E6-4938-B164-BFC9EDBD189A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04949971-FC3D-4D70-8DD2-8BB549B853BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04949971-FC3D-4D70-8DD2-8BB549B853BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04949971-FC3D-4D70-8DD2-8BB549B853BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04949971-FC3D-4D70-8DD2-8BB549B853BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

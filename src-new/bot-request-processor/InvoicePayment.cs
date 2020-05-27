@@ -11,9 +11,7 @@ namespace BotRequestProcessor
     {
         public string GetPaymentStatus()
         {
-            //Thread.Sleep(5000);  // fake processing
-
-            return "Status is PAID";
+            return "Payment status: PAID (on 02/02/2020)";
         }
     }
 }

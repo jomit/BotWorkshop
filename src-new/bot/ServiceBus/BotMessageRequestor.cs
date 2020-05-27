@@ -39,7 +39,8 @@ namespace CoreBot.ServiceBus
         {
             var messageReceiver = new MessageReceiver(serviceBusConnectionString, userQueueName, ReceiveMode.PeekLock);
             Message message = await messageReceiver.ReceiveAsync();
-            var messageText = $"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}";
+            //var messageText = $"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}";
+            var messageText = $"{Encoding.UTF8.GetString(message.Body)}";
             await messageReceiver.CompleteAsync(message.SystemProperties.LockToken);
             return messageText;
         }
