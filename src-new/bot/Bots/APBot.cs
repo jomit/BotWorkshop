@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
@@ -46,6 +47,16 @@ namespace Microsoft.BotBuilderSamples.Bots
 
             // Run the Dialog with the new message Activity.
             await Dialog.RunAsync(turnContext, ConversationState.CreateProperty<DialogState>("DialogState"), cancellationToken);
+        }
+
+        protected override async Task OnReactionsAddedAsync(IList<MessageReaction> messageReactions, ITurnContext<IMessageReactionActivity> turnContext, CancellationToken cancellationToken)
+        {
+            foreach (var reaction in messageReactions)
+            {
+                var newReaction = $"You reacted with '{reaction.Type}' to the following message: '{turnContext.Activity.ReplyToId}'";
+                var replyActivity = MessageFactory.Text(newReaction);
+                var resourceResponse = await turnContext.SendActivityAsync(replyActivity, cancellationToken);
+            }
         }
     }
 }
